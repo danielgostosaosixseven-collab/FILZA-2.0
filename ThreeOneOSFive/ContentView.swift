@@ -1202,6 +1202,22 @@ struct ContentView: View {
         }
     }
 
+    /// Clears temporary state left by older builds that still had automatic mode.
+    /// This only removes stale UserDefaults keys; it never schedules or resumes a cycle.
+    private func clearTemporaryPatchState() {
+        UserDefaults.standard.removeObject(forKey: "temporaryPatchID")
+        UserDefaults.standard.removeObject(forKey: "temporaryPatchRestoreDeadline")
+        for key in [
+            "filza.automaticCycle.patchID",
+            "filza.automaticCycle.patchName",
+            "filza.automaticCycle.patchCategory",
+            "filza.automaticCycle.applyDeadline",
+            "filza.automaticCycle.restoreDeadline"
+        ] {
+            UserDefaults.standard.removeObject(forKey: key)
+        }
+    }
+
 }
 
 // Os callbacks permanecem sem efeito para preservar a sequência dos handlers.
