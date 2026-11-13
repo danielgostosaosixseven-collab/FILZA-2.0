@@ -1,0 +1,930 @@
+// !UTF8*0
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3105A200 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A020; };
+		3105A201 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A021; };
+		3105A203 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A023; };
+		3105A204 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A024; };
+		3105A205 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A025; };
+		3105A206 /* SBX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A026; };
+		3105A207 /* MG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A027; };
+		3105A209 /* bad_query.c in Sources */ = {isa = PBXBuildFile; fileRef = 3105A029; };
+		3105A210 /* mcm_bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A030; };
+		3105A220 /* kexploit_opa334.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A080; };
+		3105A221 /* offsets.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A081; };
+		3105A222 /* krw.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A082; };
+		3105A223 /* kutils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A083; };
+		3105A224 /* vnode.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A084; };
+		3105A225 /* sandbox_escape.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A085; };
+		3105A226 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A098; };
+		3105A227 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A099; };
+		3105A235 /* AppIconHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105A106; };
+		3105A208 /* KernelExploit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A202; };
+		3105J200 /* AntiDetection.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105J201; };
+		3105N200 /* AntiCrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105N201; };
+		3105J204 /* DisplayIdentity.m in Sources */ = {isa = PBXBuildFile; fileRef = 3105J203; };
+		3105J206 /* DisplayIdentityAttribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105J205; };
+		3105A236 /* ContainerIdentityResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A108; };
+		3105A237 /* ContainerBrowserLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A109; };
+		3105A238 /* FileReplacementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A110; };
+		3105A239 /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A111; };
+		3105A240 /* FileBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A112; };
+		3105A241 /* SupportPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A113; };
+		3105B214 /* PatchProjectModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B114; };
+		3105B215 /* PatchPackageCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B115; };
+		3105B216 /* PatchKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B116; };
+		3105B217 /* PatchTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B117; };
+		3105B218 /* DevicePatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B118; };
+		3105B219 /* PatchProjectLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B119; };
+		3105B220 /* PatchProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B120; };
+		3105B221 /* PatchProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B121; };
+		3105B222 /* PatchProjectEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105B122; };
+		3105C200 /* PatchDraftService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105C100; };
+		3105C201 /* PatchDraftCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105C101; };
+		3105C202 /* FolderPatchSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105C102; };
+		3105E200 /* LimitedCleanerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105E100; };
+		3105E201 /* CleanerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105E101; };
+		3105E202 /* CleanerCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105E102; };
+		3105F200 /* wallpaper_zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 3105F100; };
+		3105F201 /* WallpaperLabModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105F102; };
+		3105F202 /* SecureZIPArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105F103; };
+		3105F203 /* WallpaperInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105F104; };
+		3105F204 /* WallpaperLabService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105F105; };
+		3105F205 /* WallpaperLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105F106; };
+		3105F206 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105F108; };
+		3105G200 /* ZIPArchiveWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105G100; };
+		3105G201 /* FileOperationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105G101; };
+		3105G202 /* ZIPArchiveExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105G102; };
+		3105G203 /* PatchWorkspaceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105G103; };
+		3105H200 /* AppTabNavigationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105H100; };
+		3105I200 /* FilesTabControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105I100; };
+		3105I201 /* FilesTabSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105I101; };
+		3105A233 /* ContainerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A104; };
+		3105A234 /* AppDataBrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105A105; };
+		3105A228 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3105A120; };
+		3105K200 /* LicenseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105K100; };
+		3105K201 /* LicenseActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105K101; };
+		3105L200 /* FilzaLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105L100; };
+		3105M200 /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105M100; };
+		3105A211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3105A031; };
+		3105P200 /* ActivationBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 3105P100; };
+		3105V200 /* REALExternalMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3105V100; };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		3105R200 /* PatchCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105R100; };
+		3105U200 /* PatchCatalogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105U100; };
+		3105S200 /* AnimatedHyperBackdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105S100; };
+		3105T200 /* PatchUnlockPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105T100; };
+
+		3105X200 /* ExtendedVersionUnlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105X100; };
+
+		3105Y201 /* BrandProtection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3105Y101; };
+		9CBEEC1D4E7B4151A86A00F4 /* TutorialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE53202258642259BFEA9C3; };
+		6FB65AE0BECF428F99323894 /* Tutorials folder in Resources */ = {isa = PBXBuildFile; fileRef = BA06015B7A934C9BA2BB255C; };
+		ALBD89C5A4F49EA4950 /* AirLiftPairingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ALA5BD547C95C04D48; };
+		ALBD68B904BB52F42E1 /* AirLiftTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = AL6F5139A6005F4587; };
+		ALKEEPBUILD1 /* AirLiftPairingKeepAlive.swift in Sources */ = {isa = PBXBuildFile; fileRef = ALKEEPREF01; };
+			ALB2FFC63229F824EBB /* AirLiftPairingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AL3B614BD1FAA740B5; };
+			ALBB5B29360372243B2 /* AirLiftFirstRunSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AL0E87762A94BE4E23; };
+			0A30188BE25A421D8AF210F5 /* GrappaHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BE6678169CA457780A980D2; };
+			857479C17A344E1087F10A9B /* AirliftFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3FACC5A68B4A1B9C2AE8BD; };
+		FGO_NORMAL_BUILD /* ff_normal_original in Resources */ = {isa = PBXBuildFile; fileRef = FGO_NORMAL_REF; };
+		FGO_MAX_BUILD /* ff_max_original in Resources */ = {isa = PBXBuildFile; fileRef = FGO_MAX_REF; };
+		FGO_STORE_BUILD /* FixedGameOriginalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FGO_STORE_REF; };
+		F1B3000000000000000000101 /* AirLiftConnectionCheckGate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B300000000000000000001; };
+		F1B3000000000000000000102 /* BackgroundKeepAliveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B300000000000000000002; };
+		AUTO00000000000000000002 /* ExploitRunGuard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AUTO00000000000000000001; };
+		AUTO00000000000000000006 /* WiFiConnectionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AUTO00000000000000000005; };
+        F12200000000000000000111 /* worse_query.m in Sources */ = {isa = PBXBuildFile; fileRef = F12200000000000000000101; };
+        F12200000000000000000113 /* WorseQueryAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12200000000000000000103; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3105A010 /* Filza Bypass External.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Filza Bypass External.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3105A020 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		3105A021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3105A023 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3105A024 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		3105A025 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		3105A026 /* SBX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBX.swift; sourceTree = "<group>"; };
+		3105A027 /* MG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MG.swift; sourceTree = "<group>"; };
+		3105A029 /* bad_query.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bad_query.c; sourceTree = "<group>"; };
+		3105A030 /* mcm_bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mcm_bridge.m; sourceTree = "<group>"; };
+		3105A031 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3105P100 /* ActivationBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ActivationBackground.png; sourceTree = "<group>"; };
+		3105V100 /* REALExternalMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = REALExternalMark.png; sourceTree = "<group>"; };
+		3105A040 /* bad_query.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bad_query.h; sourceTree = "<group>"; };
+		3105A041 /* mcm_bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mcm_bridge.h; sourceTree = "<group>"; };
+		3105A050 /* ThreeOneOSFive-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeOneOSFive-Bridging-Header.h"; sourceTree = "<group>"; };
+		3105A060 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3105A080 /* kexploit_opa334.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kexploit_opa334.m; sourceTree = "<group>"; };
+		3105A081 /* offsets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = offsets.m; sourceTree = "<group>"; };
+		3105A082 /* krw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = krw.m; sourceTree = "<group>"; };
+		3105A083 /* kutils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = kutils.m; sourceTree = "<group>"; };
+		3105A084 /* vnode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = vnode.m; sourceTree = "<group>"; };
+		3105A085 /* sandbox_escape.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sandbox_escape.m; sourceTree = "<group>"; };
+		3105A090 /* kexploit_opa334.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kexploit_opa334.h; sourceTree = "<group>"; };
+		3105A091 /* offsets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = offsets.h; sourceTree = "<group>"; };
+		3105A092 /* krw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = krw.h; sourceTree = "<group>"; };
+		3105A093 /* kutils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kutils.h; sourceTree = "<group>"; };
+		3105A094 /* vnode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = vnode.h; sourceTree = "<group>"; };
+		3105A095 /* sandbox_escape.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sandbox_escape.h; sourceTree = "<group>"; };
+		3105A096 /* machine_info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = machine_info.h; sourceTree = "<group>"; };
+		3105A097 /* xpaci.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xpaci.h; sourceTree = "<group>"; };
+		3105A098 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		3105A099 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		3105A104 /* ContainerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerStore.swift; sourceTree = "<group>"; };
+		3105A105 /* AppDataBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataBrowserView.swift; sourceTree = "<group>"; };
+		3105A106 /* AppIconHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppIconHelper.m; sourceTree = "<group>"; };
+		3105A107 /* AppIconHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppIconHelper.h; sourceTree = "<group>"; };
+		3105A202 /* KernelExploit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelExploit.swift; sourceTree = "<group>"; };
+		3105J201 /* AntiDetection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiDetection.m; sourceTree = "<group>"; };
+		3105N201 /* AntiCrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AntiCrack.swift; sourceTree = "<group>"; };
+		3105J202 /* DisplayIdentity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayIdentity.h; sourceTree = "<group>"; };
+		3105J203 /* DisplayIdentity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisplayIdentity.m; sourceTree = "<group>"; };
+		3105J205 /* DisplayIdentityAttribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayIdentityAttribution.swift; sourceTree = "<group>"; };
+		3105A108 /* ContainerIdentityResolver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerIdentityResolver.swift; sourceTree = "<group>"; };
+		3105A109 /* ContainerBrowserLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerBrowserLogic.swift; sourceTree = "<group>"; };
+		3105A110 /* FileReplacementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileReplacementService.swift; sourceTree = "<group>"; };
+		3105A111 /* FileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
+		3105A112 /* FileBrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileBrowserView.swift; sourceTree = "<group>"; };
+		3105A113 /* SupportPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportPolicy.swift; sourceTree = "<group>"; };
+		3105K100 /* LicenseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseManager.swift; sourceTree = "<group>"; };
+		3105K101 /* LicenseActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseActivationView.swift; sourceTree = "<group>"; };
+		3105L100 /* FilzaLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilzaLicense.swift; sourceTree = "<group>"; };
+		3105M100 /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		3105S100 /* AnimatedHyperBackdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHyperBackdrop.swift; sourceTree = "<group>"; };
+		3105T100 /* PatchUnlockPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchUnlockPrompt.swift; sourceTree = "<group>"; };
+		3105B114 /* PatchProjectModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchProjectModels.swift; sourceTree = "<group>"; };
+		3105B115 /* PatchPackageCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchPackageCodec.swift; sourceTree = "<group>"; };
+		3105B116 /* PatchKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchKeyStore.swift; sourceTree = "<group>"; };
+		3105B117 /* PatchTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchTransaction.swift; sourceTree = "<group>"; };
+		3105B118 /* DevicePatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevicePatchService.swift; sourceTree = "<group>"; };
+		3105B119 /* PatchProjectLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchProjectLibrary.swift; sourceTree = "<group>"; };
+		3105B120 /* PatchProjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchProjectStore.swift; sourceTree = "<group>"; };
+		3105B121 /* PatchProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchProjectsView.swift; sourceTree = "<group>"; };
+		3105B122 /* PatchProjectEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchProjectEditorView.swift; sourceTree = "<group>"; };
+		3105C100 /* PatchDraftService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchDraftService.swift; sourceTree = "<group>"; };
+		3105C101 /* PatchDraftCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchDraftCoordinator.swift; sourceTree = "<group>"; };
+		3105C102 /* FolderPatchSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPatchSelectionView.swift; sourceTree = "<group>"; };
+		3105E100 /* LimitedCleanerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LimitedCleanerService.swift; sourceTree = "<group>"; };
+		3105E101 /* CleanerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerView.swift; sourceTree = "<group>"; };
+		3105E102 /* CleanerCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CleanerCatalog.swift; sourceTree = "<group>"; };
+		3105F100 /* wallpaper_zip.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = wallpaper_zip.c; sourceTree = "<group>"; };
+		3105F101 /* wallpaper_zip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wallpaper_zip.h; sourceTree = "<group>"; };
+		3105F102 /* WallpaperLabModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperLabModels.swift; sourceTree = "<group>"; };
+		3105F103 /* SecureZIPArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureZIPArchive.swift; sourceTree = "<group>"; };
+		3105F104 /* WallpaperInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperInstaller.swift; sourceTree = "<group>"; };
+		3105F105 /* WallpaperLabService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperLabService.swift; sourceTree = "<group>"; };
+		3105F106 /* WallpaperLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperLabView.swift; sourceTree = "<group>"; };
+		3105F108 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3105G100 /* ZIPArchiveWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZIPArchiveWriter.swift; sourceTree = "<group>"; };
+		3105G101 /* FileOperationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileOperationCoordinator.swift; sourceTree = "<group>"; };
+		3105G102 /* ZIPArchiveExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZIPArchiveExtractor.swift; sourceTree = "<group>"; };
+		3105G103 /* PatchWorkspaceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchWorkspaceService.swift; sourceTree = "<group>"; };
+		3105H100 /* AppTabNavigationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabNavigationState.swift; sourceTree = "<group>"; };
+		3105I100 /* FilesTabControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTabControls.swift; sourceTree = "<group>"; };
+		3105I101 /* FilesTabSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesTabSwitcherView.swift; sourceTree = "<group>"; };
+		3105A121 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3105A122 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+3105A123 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3105B123 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		3105R100 /* PatchCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchCatalog.swift; sourceTree = "<group>"; };
+		3105U100 /* PatchCatalogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatchCatalogStore.swift; sourceTree = "<group>"; };
+
+		3105X100 /* ExtendedVersionUnlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedVersionUnlock.swift; sourceTree = "<group>"; };
+
+		3105Y101 /* BrandProtection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandProtection.swift; sourceTree = "<group>"; };
+		9EE53202258642259BFEA9C3 /* TutorialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialsView.swift; sourceTree = "<group>"; };
+		BA06015B7A934C9BA2BB255C /* Tutorials */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tutorials; sourceTree = "<group>"; };
+		ALB7B2498DA67E46CD /* AirLiftFFI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeOneOSFive/helpers/AirLiftFFI.h"; sourceTree = "<group>"; };
+		ALA5BD547C95C04D48 /* AirLiftPairingStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThreeOneOSFive/helpers/AirLiftPairingStore.swift"; sourceTree = "<group>"; };
+		AL6F5139A6005F4587 /* AirLiftTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThreeOneOSFive/helpers/AirLiftTransport.swift"; sourceTree = "<group>"; };
+		ALKEEPREF01 /* AirLiftPairingKeepAlive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirLiftPairingKeepAlive.swift; sourceTree = "<group>"; };
+		AL3B614BD1FAA740B5 /* AirLiftPairingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThreeOneOSFive/helpers/AirLiftPairingController.swift"; sourceTree = "<group>"; };
+			AL0E87762A94BE4E23 /* AirLiftFirstRunSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThreeOneOSFive/views/AirLiftFirstRunSetupView.swift"; sourceTree = "<group>"; };
+			1BE6678169CA457780A980D2 /* GrappaHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ThreeOneOSFive/helpers/GrappaHelper.m"; sourceTree = "<group>"; };
+			A571394A25144E339978AD14 /* GrappaHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeOneOSFive/helpers/GrappaHelper.h"; sourceTree = "<group>"; };
+			9F3FACC5A68B4A1B9C2AE8BD /* AirliftFFI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AirliftFFI.xcframework; sourceTree = "<group>"; };
+			ALF1EC3AEC48CB47C9 /* idevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeOneOSFive/libs/idevice.h"; sourceTree = "<group>"; };
+			ALE6BA02F4B3394167 /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThreeOneOSFive/libs/module.modulemap"; sourceTree = "<group>"; };
+		FGO_NORMAL_REF /* ff_normal_original */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Originals/ff_normal_original"; sourceTree = "<group>"; };
+		FGO_MAX_REF /* ff_max_original */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Originals/ff_max_original"; sourceTree = "<group>"; };
+			FGO_STORE_REF /* FixedGameOriginalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedGameOriginalStore.swift; sourceTree = "<group>"; };
+		F1B300000000000000000001 /* AirLiftConnectionCheckGate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirLiftConnectionCheckGate.swift; sourceTree = "<group>"; };
+		F1B300000000000000000002 /* BackgroundKeepAliveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundKeepAliveManager.swift; sourceTree = "<group>"; };
+		AUTO00000000000000000001 /* ExploitRunGuard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploitRunGuard.swift; sourceTree = "<group>"; };
+		AUTO00000000000000000005 /* WiFiConnectionMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiConnectionMonitor.swift; sourceTree = "<group>"; };
+        F12200000000000000000101 /* worse_query.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = worse_query.m; sourceTree = "<group>"; };
+        F12200000000000000000102 /* worse_query.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = worse_query.h; sourceTree = "<group>"; };
+        F12200000000000000000103 /* WorseQueryAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorseQueryAccess.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+	/* Begin PBXFrameworksBuildPhase section */
+			3105A300 /* Frameworks */ = {
+				isa = PBXFrameworksBuildPhase;
+					buildActionMask = 2147483647;
+					files = (
+						857479C17A344E1087F10A9B /* AirliftFFI.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3105A400 = {
+			isa = PBXGroup;
+			children = (
+				3105A401 /* ThreeOneOSFive */,
+				9F3FACC5A68B4A1B9C2AE8BD /* AirliftFFI.xcframework */,
+				3105A402 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3105A401 /* ThreeOneOSFive */ = {
+			isa = PBXGroup;
+			children = (
+				3105A050 /* ThreeOneOSFive-Bridging-Header.h */,
+				3105A060 /* Info.plist */,
+				3105A020 /* App.swift */,
+				3105A021 /* ContentView.swift */,
+				9EE53202258642259BFEA9C3 /* TutorialsView.swift */,
+				BA06015B7A934C9BA2BB255C /* Tutorials */,
+				3105Y101 /* BrandProtection.swift */,
+
+				3105A403 /* exploit */,
+				3105A404 /* views */,
+				3105A405 /* helpers */,
+				3105A406 /* kexploit */,
+				3105A120 /* Localizable.strings */,
+				3105A031 /* Assets.xcassets */,
+				3105P100 /* ActivationBackground.png */,
+				3105V100 /* REALExternalMark.png */,
+				FGO_NORMAL_REF /* ff_normal_original */,
+				FGO_MAX_REF /* ff_max_original */,
+			);
+			path = ThreeOneOSFive;
+			sourceTree = "<group>";
+		};
+		3105A402 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3105A010 /* Filza Bypass External.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3105A403 /* exploit */ = {
+			isa = PBXGroup;
+			children = (
+                F12200000000000000000102 /* worse_query.h */,
+                F12200000000000000000101 /* worse_query.m */,
+				3105A029 /* bad_query.c */,
+				3105A040 /* bad_query.h */,
+				3105A030 /* mcm_bridge.m */,
+				3105A041 /* mcm_bridge.h */,
+				3105F100 /* wallpaper_zip.c */,
+				3105F101 /* wallpaper_zip.h */,
+			);
+			path = exploit;
+			sourceTree = "<group>";
+		};
+		3105A404 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3105A098 /* DesignSystem.swift */,
+				3105A023 /* SettingsView.swift */,
+				3105A024 /* LogView.swift */,
+				3105A105 /* AppDataBrowserView.swift */,
+				3105A112 /* FileBrowserView.swift */,
+				3105I100 /* FilesTabControls.swift */,
+				3105I101 /* FilesTabSwitcherView.swift */,
+				3105B121 /* PatchProjectsView.swift */,
+				3105B122 /* PatchProjectEditorView.swift */,
+				3105C102 /* FolderPatchSelectionView.swift */,
+				3105E101 /* CleanerView.swift */,
+				3105F106 /* WallpaperLabView.swift */,
+				3105F108 /* OnboardingView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3105A405 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+                F12200000000000000000103 /* WorseQueryAccess.swift */,
+				ALKEEPREF01 /* AirLiftPairingKeepAlive.swift */,
+				FGO_STORE_REF /* FixedGameOriginalStore.swift */,
+			3105X100 /* ExtendedVersionUnlock.swift */,
+				3105A099 /* Localization.swift */,
+				3105A104 /* ContainerStore.swift */,
+				3105A108 /* ContainerIdentityResolver.swift */,
+				3105A109 /* ContainerBrowserLogic.swift */,
+				3105A110 /* FileReplacementService.swift */,
+				3105A111 /* FileManagerService.swift */,
+				3105G100 /* ZIPArchiveWriter.swift */,
+				3105G102 /* ZIPArchiveExtractor.swift */,
+				3105G101 /* FileOperationCoordinator.swift */,
+				3105A113 /* SupportPolicy.swift */,
+				3105B114 /* PatchProjectModels.swift */,
+				3105B115 /* PatchPackageCodec.swift */,
+				3105B116 /* PatchKeyStore.swift */,
+				3105B117 /* PatchTransaction.swift */,
+				3105B118 /* DevicePatchService.swift */,
+				3105B119 /* PatchProjectLibrary.swift */,
+				3105B120 /* PatchProjectStore.swift */,
+				3105G103 /* PatchWorkspaceService.swift */,
+				3105H100 /* AppTabNavigationState.swift */,
+				3105C100 /* PatchDraftService.swift */,
+				3105C101 /* PatchDraftCoordinator.swift */,
+				3105E100 /* LimitedCleanerService.swift */,
+				3105E102 /* CleanerCatalog.swift */,
+				3105F102 /* WallpaperLabModels.swift */,
+				3105F103 /* SecureZIPArchive.swift */,
+				3105F104 /* WallpaperInstaller.swift */,
+					3105F105 /* WallpaperLabService.swift */,
+					3105K100 /* LicenseManager.swift */,
+					3105K101 /* LicenseActivationView.swift */,
+					3105L100 /* FilzaLicense.swift */,
+					3105M100 /* LockScreenView.swift */,
+				3105S100 /* AnimatedHyperBackdrop.swift */,
+				3105T100 /* PatchUnlockPrompt.swift */,
+					3105A106 /* AppIconHelper.m */,
+				3105A107 /* AppIconHelper.h */,
+				3105A202 /* KernelExploit.swift */,
+				3105J201 /* AntiDetection.m */,
+				3105N201 /* AntiCrack.swift */,
+				3105J202 /* DisplayIdentity.h */,
+				3105J203 /* DisplayIdentity.m */,
+				3105J205 /* DisplayIdentityAttribution.swift */,
+				3105A025 /* Utils.swift */,
+				3105A026 /* SBX.swift */,
+				3105A027 /* MG.swift */,
+				3105R100 /* PatchCatalog.swift */,
+				3105U100 /* PatchCatalogStore.swift */,
+				F1B300000000000000000002 /* BackgroundKeepAliveManager.swift */,
+				F1B300000000000000000001 /* AirLiftConnectionCheckGate.swift */,
+				AUTO00000000000000000001 /* ExploitRunGuard.swift */,
+				AUTO00000000000000000005 /* WiFiConnectionMonitor.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
+		3105A406 /* kexploit */ = {
+			isa = PBXGroup;
+			children = (
+				3105A080 /* kexploit_opa334.m */,
+				3105A090 /* kexploit_opa334.h */,
+				3105A081 /* offsets.m */,
+				3105A091 /* offsets.h */,
+				3105A082 /* krw.m */,
+				3105A092 /* krw.h */,
+				3105A083 /* kutils.m */,
+				3105A093 /* kutils.h */,
+				3105A084 /* vnode.m */,
+				3105A094 /* vnode.h */,
+				3105A085 /* sandbox_escape.m */,
+				3105A095 /* sandbox_escape.h */,
+				3105A096 /* machine_info.h */,
+				3105A097 /* xpaci.h */,
+			);
+			path = kexploit;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3105A500 /* Filza Bypass External */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3105A600;
+			buildPhases = (
+				3105A700 /* Sources */,
+				3105A300 /* Frameworks */,
+				3105A800 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Filza Bypass External";
+			productName = "Filza Bypass External";
+			productReference = 3105A010;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3105A900 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = 3105AA00;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				vi,
+				"zh-Hans",
+				Base,
+			);
+			mainGroup = 3105A400;
+			productRefGroup = 3105A402;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3105A500,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3105A800 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3105A211,
+				3105A228,
+				3105Q201,
+				3105Q202,
+				3105Q203,
+				3105Q204,
+				3105Q205,
+				3105Q206,
+				3105Q207,
+				3105Q208,
+				3105Q209,
+				3105Q210,
+				3105Q211,
+				3105Q212,
+				3105Q213,
+				3105Q214,
+				3105Q215,
+				3105Q216,
+				3105Q217,
+				3105Q218,
+				3105Q219,
+				3105Q220,
+				3105P201,
+				3105P202,
+				3105P203,
+				3105P204,
+				3105P205,
+				3105P206,
+				3105P207,
+				3105P208,
+				3105P209,
+				3105P210,
+				3105P211,
+				3105P212,
+				3105P213,
+				3105P215,
+				3105P216,
+				3105P200,
+				3105V200,
+				6FB65AE0BECF428F99323894,
+				FGO_NORMAL_BUILD,
+				FGO_MAX_BUILD,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3105A700 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+                F12200000000000000000113 /* WorseQueryAccess.swift in Sources */,
+                F12200000000000000000111 /* worse_query.m in Sources */,
+				FGO_STORE_BUILD,
+				3105A200, 3105A201, 3105A203, 3105A204,
+				3105A205, 3105A206, 3105A207, 3105A209,
+				3105A210, 3105A220, 3105A221, 3105A222, 3105A223,
+				3105A224, 3105A225,
+				3105A226,
+				3105A227,
+				3105A233,
+				3105A234,
+				3105A235,
+				3105A236,
+				3105A237,
+				3105A238,
+				3105A239,
+				3105A208,
+				3105J200,
+				3105N200,
+				3105J204,
+				3105J206,
+				3105A240,
+					3105A241,
+					3105K200,
+					3105K201,
+					3105L200,
+					3105M200,
+					3105B214,
+				3105B215,
+				3105B216,
+				3105B217,
+				3105B218,
+				3105B219,
+				3105B220,
+				3105B221,
+				3105B222,
+				3105C200,
+				3105C201,
+				3105C202,
+				3105E200,
+				3105E201,
+				3105E202,
+				3105F200,
+				3105F201,
+				3105F202,
+				3105F203,
+				3105F204,
+				3105F205,
+				3105F206,
+				3105G200,
+				3105G201,
+				3105G202,
+				3105G203,
+				3105H200,
+				3105I200,
+				3105I201,
+				3105R200,
+				3105U200,
+				3105S200,
+				3105T200,
+			3105X200,
+				3105Y201,
+				9CBEEC1D4E7B4151A86A00F4,
+				ALBD89C5A4F49EA4950 /* AirLiftPairingStore.swift in Sources */,
+				ALBD68B904BB52F42E1 /* AirLiftTransport.swift in Sources */,
+				ALKEEPBUILD1 /* AirLiftPairingKeepAlive.swift in Sources */,
+				ALB2FFC63229F824EBB /* AirLiftPairingController.swift in Sources */,
+				ALBB5B29360372243B2 /* AirLiftFirstRunSetupView.swift in Sources */,
+				0A30188BE25A421D8AF210F5 /* GrappaHelper.m in Sources */,
+				AUTO00000000000000000002 /* ExploitRunGuard.swift in Sources */,
+				AUTO00000000000000000006 /* WiFiConnectionMonitor.swift in Sources */,
+				3105A200 /* App.swift in Sources */,
+				3105A201 /* ContentView.swift in Sources */,
+				3105A203 /* SettingsView.swift in Sources */,
+				3105A204 /* LogView.swift in Sources */,
+				3105A205 /* Utils.swift in Sources */,
+				3105A206 /* SBX.swift in Sources */,
+				3105A207 /* MG.swift in Sources */,
+				3105A226 /* DesignSystem.swift in Sources */,
+				3105A227 /* Localization.swift in Sources */,
+				3105A208 /* KernelExploit.swift in Sources */,
+				3105N200 /* AntiCrack.swift in Sources */,
+				3105J206 /* DisplayIdentityAttribution.swift in Sources */,
+				3105A236 /* ContainerIdentityResolver.swift in Sources */,
+				3105A237 /* ContainerBrowserLogic.swift in Sources */,
+				3105A238 /* FileReplacementService.swift in Sources */,
+				3105A239 /* FileManagerService.swift in Sources */,
+				3105A240 /* FileBrowserView.swift in Sources */,
+				3105A241 /* SupportPolicy.swift in Sources */,
+				3105B214 /* PatchProjectModels.swift in Sources */,
+				3105B215 /* PatchPackageCodec.swift in Sources */,
+				3105B216 /* PatchKeyStore.swift in Sources */,
+				3105B217 /* PatchTransaction.swift in Sources */,
+				3105B218 /* DevicePatchService.swift in Sources */,
+				3105B219 /* PatchProjectLibrary.swift in Sources */,
+				3105B220 /* PatchProjectStore.swift in Sources */,
+				3105B221 /* PatchProjectsView.swift in Sources */,
+				3105B222 /* PatchProjectEditorView.swift in Sources */,
+				3105C200 /* PatchDraftService.swift in Sources */,
+				3105C201 /* PatchDraftCoordinator.swift in Sources */,
+				3105C202 /* FolderPatchSelectionView.swift in Sources */,
+				3105E200 /* LimitedCleanerService.swift in Sources */,
+				3105E201 /* CleanerView.swift in Sources */,
+				3105E202 /* CleanerCatalog.swift in Sources */,
+				3105F201 /* WallpaperLabModels.swift in Sources */,
+				3105F202 /* SecureZIPArchive.swift in Sources */,
+				3105F203 /* WallpaperInstaller.swift in Sources */,
+				3105F204 /* WallpaperLabService.swift in Sources */,
+				3105F205 /* WallpaperLabView.swift in Sources */,
+				3105F206 /* OnboardingView.swift in Sources */,
+				3105G200 /* ZIPArchiveWriter.swift in Sources */,
+				3105G201 /* FileOperationCoordinator.swift in Sources */,
+				3105G202 /* ZIPArchiveExtractor.swift in Sources */,
+				3105G203 /* PatchWorkspaceService.swift in Sources */,
+				3105H200 /* AppTabNavigationState.swift in Sources */,
+				3105I200 /* FilesTabControls.swift in Sources */,
+				3105I201 /* FilesTabSwitcherView.swift in Sources */,
+				3105A233 /* ContainerStore.swift in Sources */,
+				3105A234 /* AppDataBrowserView.swift in Sources */,
+				3105K200 /* LicenseManager.swift in Sources */,
+				3105K201 /* LicenseActivationView.swift in Sources */,
+				3105L200 /* FilzaLicense.swift in Sources */,
+				3105M200 /* LockScreenView.swift in Sources */,
+				3105R200 /* PatchCatalog.swift in Sources */,
+				3105U200 /* PatchCatalogStore.swift in Sources */,
+				3105S200 /* AnimatedHyperBackdrop.swift in Sources */,
+				3105T200 /* PatchUnlockPrompt.swift in Sources */,
+				3105X200 /* ExtendedVersionUnlock.swift in Sources */,
+				3105Y201 /* BrandProtection.swift in Sources */,
+				9CBEEC1D4E7B4151A86A00F4 /* TutorialsView.swift in Sources */,
+				F1B3000000000000000000101 /* AirLiftConnectionCheckGate.swift in Sources */,
+				F1B3000000000000000000102 /* BackgroundKeepAliveManager.swift in Sources */,
+);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3105A120 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3105A121 /* en */,
+				3105A122 /* vi */,
+				3105A123 /* es */,
+				3105B123 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3105A601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ThreeOneOSFive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "FILZA EXTERNAL BYPASS";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 5.0.11;
+				OTHER_LDFLAGS = "-lz -lc++";
+            HEADER_SEARCH_PATHS = (
+                "$(inherited)",
+                "$(PROJECT_DIR)/ThreeOneOSFive/libs",
+            );
+            LIBRARY_SEARCH_PATHS = (
+                "$(inherited)",
+                "$(PROJECT_DIR)/ThreeOneOSFive/libs",
+            );
+				PRODUCT_BUNDLE_IDENTIFIER = "com.apple.mobile.MobileHouseArrest";
+				PRODUCT_NAME = "FILZA EXTERNAL BYPASS";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ThreeOneOSFive/ThreeOneOSFive-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3105A602 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 19;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ThreeOneOSFive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "FILZA EXTERNAL BYPASS";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+					IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+					LD_RUNPATH_SEARCH_PATHS = (
+						"$(inherited)",
+						"@executable_path/Frameworks",
+					);
+					MARKETING_VERSION = 5.0.11;
+					OTHER_LDFLAGS = "-lz -lc++";
+					HEADER_SEARCH_PATHS = (
+						"$(inherited)",
+						"$(PROJECT_DIR)/ThreeOneOSFive/libs",
+					);
+					LIBRARY_SEARCH_PATHS = (
+						"$(inherited)",
+						"$(PROJECT_DIR)/ThreeOneOSFive/libs",
+					);
+					PRODUCT_BUNDLE_IDENTIFIER = "com.apple.mobile.MobileHouseArrest";
+					PRODUCT_NAME = "FILZA EXTERNAL BYPASS";
+					SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ThreeOneOSFive/ThreeOneOSFive-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3105AA01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3105AA02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3105A600 /* Build configuration list for PBXNativeTarget "Filza Bypass External" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3105A601 /* Debug */,
+				3105A602 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3105AA00 /* Build configuration list for PBXProject "ThreeOneOSFive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3105AA01 /* Debug */,
+				3105AA02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3105A900;
+}

@@ -1,0 +1,223 @@
+name: Build FILZA EXTERNAL V1000 V5 IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Testar regressão da recuperação e restauração parcial
+        shell: bash
+        run: bash tests/run-recovery-tests.sh
+
+      - name: Testar politica de compatibilidade
+        run: python3 tests/run_file_access_tests.py
+
+      - name: Configurar Rust para iOS arm64
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-ios
+
+      - name: Compilar AirliftFFI (AirTraffic)
+        shell: bash
+        run: DEVELOPER_DIR="$(xcode-select -p)" IPHONEOS_DEPLOYMENT_TARGET=16.0 bash AirliftFFI/build-ios-device.sh
+
+      - name: Auditar cache e ausência de workspaces plaintext
+        shell: bash
+        run: python3 tools/validate_patch_security.py
+
+      - name: Validar recursos-fonte Filza
+        shell: bash
+        run: python3 tools/validate_ipa_resources.py --source-only
+
+      - name: Localizar projeto e scheme
+        id: locate
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          PROJECT=$(find . -name '*.xcodeproj' -type d \
+            ! -path '*/Pods/*' \
+            ! -path '*/Carthage/*' | head -1)
+
+          if [ -z "$PROJECT" ]; then
+            echo "Nenhum arquivo .xcodeproj foi encontrado."
+            exit 1
+          fi
+
+          echo "Projeto encontrado: $PROJECT"
+
+          # Usar JSON para extrair schemes de forma confiável
+          SCHEMES_JSON=$(xcodebuild -list -project "$PROJECT" -json 2>/dev/null || true)
+
+          if [ -z "$SCHEMES_JSON" ]; then
+            echo "Falha ao obter schemes em JSON."
+            exit 1
+          fi
+
+          # Extrair o primeiro scheme usando python (corrigido para acessar project.schemes)
+          SCHEME=$(echo "$SCHEMES_JSON" | python3 -c "import sys, json; data = json.load(sys.stdin); print(data['project']['schemes'][0])" 2>/dev/null || true)
+
+          if [ -z "$SCHEME" ]; then
+            echo "Nenhum scheme encontrado."
+            echo "$SCHEMES_JSON"
+            exit 1
+          fi
+
+          echo "scheme=$SCHEME" >> "$GITHUB_OUTPUT"
+          echo "project=$PROJECT" >> "$GITHUB_OUTPUT"
+          echo "Scheme selecionado: $SCHEME"
+
+      - name: Compilar archive sem assinatura
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          xcodebuild archive \
+            -project "${{ steps.locate.outputs.project }}" \
+            -scheme "${{ steps.locate.outputs.scheme }}" \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -configuration Release \
+            -archivePath "$RUNNER_TEMP/App.xcarchive" \
+            SWIFT_OPTIMIZATION_LEVEL=-O \
+            SWIFT_COMPILATION_MODE=wholemodule \
+            GCC_OPTIMIZATION_LEVEL=s \
+            DEBUG_INFORMATION_FORMAT=dwarf \
+            GCC_GENERATE_DEBUGGING_SYMBOLS=NO \
+            ENABLE_TESTABILITY=NO \
+            OTHER_LDFLAGS="-ObjC -lc++ -lz" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+
+      - name: Verificar aplicativo compilado
+        id: app
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          APP_PATH=$(find "$RUNNER_TEMP/App.xcarchive/Products/Applications" -maxdepth 1 -name '*.app' -type d | head -1)
+
+          if [ -z "$APP_PATH" ] || [ ! -d "$APP_PATH" ]; then
+            echo "Nenhum .app foi encontrado dentro do archive."
+            find "$RUNNER_TEMP/App.xcarchive" -maxdepth 5 -type d | sort
+            exit 1
+          fi
+
+          echo "app_path=$APP_PATH" >> "$GITHUB_OUTPUT"
+          echo "Aplicativo encontrado: $APP_PATH"
+
+      - name: Verificar Bundle ID
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          APP_PATH="${{ steps.app.outputs.app_path }}"
+          INFO_PLIST="$APP_PATH/Info.plist"
+
+          if [ ! -f "$INFO_PLIST" ]; then
+            echo "Info.plist não encontrado."
+            exit 1
+          fi
+
+          BUNDLE_ID=$(/usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$INFO_PLIST")
+          echo "Bundle ID encontrado: $BUNDLE_ID"
+
+          if [ "$BUNDLE_ID" != "com.apple.mobile.MobileHouseArrest" ]; then
+            echo "Bundle ID incorreto."
+            echo "Esperado: com.apple.mobile.MobileHouseArrest"
+            echo "Encontrado: $BUNDLE_ID"
+            exit 1
+          fi
+
+      - name: Verificar identidade Filza
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP_PATH="${{ steps.app.outputs.app_path }}"
+          DISPLAY_NAME=$(/usr/libexec/PlistBuddy -c "Print :CFBundleDisplayName" "$APP_PATH/Info.plist")
+          SHORT_VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$APP_PATH/Info.plist")
+          BUILD_NUMBER=$(/usr/libexec/PlistBuddy -c "Print :CFBundleVersion" "$APP_PATH/Info.plist")
+          if [ "$DISPLAY_NAME" != "FILZA EXTERNAL BYPASS" ]; then
+            echo "Nome de exibição Filza inesperado: $DISPLAY_NAME"
+            exit 1
+          fi
+          if [ "$SHORT_VERSION" != "5.0.11" ] || [ "$BUILD_NUMBER" != "19" ]; then
+            echo "Versão/build não atualizados: $SHORT_VERSION ($BUILD_NUMBER)"
+            exit 1
+          fi
+
+      - name: Garantir catálogo remoto sem patches embutidos
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP_PATH="${{ steps.app.outputs.app_path }}"
+          EMBEDDED_PATCHES=$(find "$APP_PATH" -type f \( -name '*.bin' -o -name '*.3105' -o -name '*.dat' -o -name '*.r7v' \) -print)
+          BAD_PATCHES=""
+          while IFS= read -r candidate; do
+            [ -z "$candidate" ] && continue
+            case "$(basename "$candidate")" in
+              "(HS ALTO)Hs alto 27 OFC (FFTH).3105"|"(HS ALTO+ANTENA)Hs Alto+ANTENA 27 OFC (FFTH).3105"|"(HS PEITO)Hs Peito OFC 27 (FFTH).3105"|"(HS PESCOCÔ 99%)Hs Pescocô 99 OFC 27 (FFTH).3105") ;;
+              *) BAD_PATCHES+="$candidate\n" ;;
+            esac
+          done <<< "$EMBEDDED_PATCHES"
+          if [ -n "$BAD_PATCHES" ]; then
+            echo "O build contém artefatos de patch embutidos não autorizados; catálogo remoto obrigatório."
+            printf '%b' "$BAD_PATCHES"
+            exit 1
+          find "$APP_PATH" -type f \( -name '*.bin' -o -name '*.3105' -o -name '*.dat' -o -name '*.r7v' \) -print
+            exit 1
+          fi
+          if find "$APP_PATH" -type d \( -name '.workspaces' -o -name '.fp-session' -o -name '.packages' \) -print -quit | grep -q .; then
+            echo "O build contém armazenamento local de patches/workspaces inesperado."
+            exit 1
+          fi
+
+      - name: Empacotar IPA
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf "$RUNNER_TEMP/Payload"
+          mkdir -p "$RUNNER_TEMP/Payload"
+
+          cp -R "${{ steps.app.outputs.app_path }}" "$RUNNER_TEMP/Payload/"
+
+          cd "$RUNNER_TEMP"
+
+          /usr/bin/zip -qry Filza-External-V1000-unsigned.ipa Payload
+
+          if [ ! -s "$RUNNER_TEMP/Filza-External-V1000-unsigned.ipa" ]; then
+            echo "A IPA não foi criada corretamente."
+            exit 1
+          fi
+
+          unzip -l "$RUNNER_TEMP/Filza-External-V1000-unsigned.ipa" | head -30
+
+      - name: Validar recursos e pixels da IPA
+        shell: bash
+        run: python3 tools/validate_ipa_resources.py "$RUNNER_TEMP/Filza-External-V1000-unsigned.ipa"
+
+      - name: Subir artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: Filza-External-V1000-unsigned-ipa
+          path: ${{ runner.temp }}/Filza-External-V1000-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7

@@ -1,0 +1,5 @@
+FILZA EXTERNAL V1000 V5 — base de origem
+Arquivo: Base.zip
+SHA-256: 18c10605db6a9e04f3a7be09ad9076e41ec22f0d6258c9ce81f18159ca615fcc
+Projeto extraído: TOMMY-EXTERNAL-20k7-master/ThreeOneOSFive.xcodeproj
+As alterações funcionais foram aplicadas como overlay seletivo; os arquivos de entrada/UI, estrutura Xcode e compatibilidade permanecem da base, salvo identidade Filza e correções listadas.

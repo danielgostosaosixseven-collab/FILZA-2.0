@@ -1,0 +1,19 @@
+# Xcode and Swift build products
+DerivedData/
+build/
+*.xcarchive/
+*.ipa
+*.dSYM/
+xcuserdata/
+*.xcuserstate
+
+# Generated patch caches/workspaces; never commit decrypted working files
+.fp-session/
+.workspaces/
+*.r7v
+
+# Local OS/editor artifacts
+.DS_Store
+*.swp
+__pycache__/
+*.py[cod]

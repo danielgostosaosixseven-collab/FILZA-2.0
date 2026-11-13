@@ -1,0 +1,34 @@
+FILZA — ATUALIZAÇÃO DE COMPATIBILIDADE
+
+Base: Filza-Projeto-Completo.zip. Preservados o visual, a tela de ativação,
+o cliente e servidor de licenças, catálogo, recursos e recuperação do Filza.
+Do outro ZIP foram integrados somente a política e o mecanismo de compatibilidade
+worse_query, com descoberta de contêiner e verificação temporária de leitura,
+substituição e restauração antes de operar. Rotas antigas do Filza continuam presentes.
+
+Settings mostra somente informações do app/iOS e versões. A seção de conexão,
+VPN e importação de pairing foi removida dessa tela. O transporte legado continua
+no projeto para preservar operações e recuperação já existentes.
+
+A política agora inclui os casos do projeto de referência: iOS 26.6.2,
+26.7.0–26.7.2, 27.0–27.2.1 e 27.3 beta 1, somente build 24C5037i nesse último caso.
+Essas faixas são regras herdadas do código de referência, não uma certificação
+de funcionamento em aparelhos. Nenhum teste físico foi realizado.
+
+IMPORTANTE PARA ASSINAR
+O novo mecanismo exige um App Group próprio, autorizado no provisioning profile
+e presente na assinatura final. FilzaCompatibility.entitlements é apenas um modelo:
+substitua pelo grupo registrado pelo proprietário do aplicativo. Não é possível
+conceder essa permissão apenas editando a lista de versões ou assinando sem perfil.
+Sem o grupo autorizado, o backend recusa o acesso e mostra erro em vez de presumir sucesso.
+
+COMPILAÇÃO
+Use a configuração GitHub Actions original do Filza, na raiz do projeto.
+Ela mantém a compilação Rust/AirLift e agora executa também a regressão da nova política.
+Não use o workflow/API do RAVENA ou TROPA DO D. Não é preciso inserir a API deles.
+
+VALIDAÇÃO LOCAL
+Auditoria de recursos e de segurança/cache do próprio Filza executadas com sucesso.
+Login/API, tema e servidor conferidos byte a byte com o ZIP original.
+Xcode/iOS indisponível neste computador: compilação Swift/Objective-C/Rust e testes
+Swift precisam ser executados no Mac do GitHub. O ZIP é código-fonte, não um IPA compilado.
